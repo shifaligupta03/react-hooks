@@ -3,7 +3,6 @@ import uuid from 'uuid/v4';
 
 const TASKS_STORAGE_KEY = 'TASKS_STORAGE_KEY';
 
-
 const storeTasks=(taskMap)=>{
     localStorage.setItem(
         TASKS_STORAGE_KEY,
@@ -16,7 +15,7 @@ const readStoredTasks=()=>{
     return ((taskMap!== "undefined") ? JSON.parse(taskMap) : { tasks:[], completedTasks:[]});
 }
 
-function Tasks(){
+const Tasks=()=>{
     const [taskText, setTaskText] = useState('');
     const storedTasks = readStoredTasks();
     const [tasks, setTasks] = useState(storedTasks.tasks);
@@ -43,7 +42,7 @@ function Tasks(){
         setCompletedTasks(completedTasks.filter(task=> task.id !== deleteTask.id));
         
    }
-
+   console.log(tasks, completedTasks);
     return(
         <div>
             <div className="form">

@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
 import Joke from './Joke';
 import Stories from './Stories';
-import Tasks from './Tasks';
+// import Tasks from './Tasks';
 import Gallery  from './Gallery';
 
 
 function App() {
 
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const updateUserQuery = event =>{
     console.log('userQuery', userQuery);
@@ -24,6 +25,10 @@ function App() {
     }
   }
 
+  const toggleShowGallery=()=>{
+    setShowGallery(!showGallery);
+  }
+
   return (
     <div className="App">
       <div className="form">
@@ -33,11 +38,16 @@ function App() {
       <hr />
       <Joke />
       <hr />
-      <Tasks />
-      <hr />
       <Stories />
       <hr />
-      <Gallery />
+      <div>
+      {
+        showGallery ? <Gallery /> : null
+      }
+      <button  onClick={toggleShowGallery}>
+      {showGallery ? 'Hide ' : 'Show '} Gallery
+      </button>
+      </div>
     </div>
   );
 }
