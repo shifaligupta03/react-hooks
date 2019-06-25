@@ -3,6 +3,7 @@ import Joke from './Joke';
 import Stories from './Stories';
 // import Tasks from './Tasks';
 import Gallery  from './Gallery';
+import Matrix  from './Matrix';
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
       {showGallery ? 'Hide ' : 'Show '} Gallery
       </button>
       </div>
+      <hr />
+      <Matrix />
     </div>
   );
 }
