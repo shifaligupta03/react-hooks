@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Joke from './Joke';
 import Stories from './Stories';
-// import Tasks from './Tasks';
+import Tasks from './Tasks';
 import Gallery  from './Gallery';
 import Matrix  from './Matrix';
 
@@ -38,6 +38,8 @@ function App() {
       </div>
       <hr />
       <Joke />
+      <hr />
+      <Tasks />
       <hr />
       <Stories />
       <hr />
